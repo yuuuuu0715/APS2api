@@ -12,6 +12,8 @@ config/data.db-wal
 # Binaries
 vertex-proxy
 vertex-proxy-*
+aps2api
+new-api
 *.exe
 *~
 
