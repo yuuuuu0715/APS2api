@@ -1,15 +1,49 @@
 services:
+  # ============================
+  # new-api — AI API 管理网关
+  # 用户管理 / API Key 分发 / 用量统计 / 计费
+  # 默认端口: 3000
+  # 管理面板: http://localhost:3000
+  # ============================
+  new-api:
+    image: calciumion/new-api:latest
+    container_name: new-api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./new-api/data:/data
+      - ./new-api/logs:/app/logs
+    environment:
+      - TZ=Asia/Shanghai
+      - ERROR_LOG_ENABLED=true
+      # !! 生产环境务必替换为随机值: openssl rand -hex 16
+      - SESSION_SECRET=a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
+    command: --log-dir /app/logs
+    restart: unless-stopped
+    networks:
+      - api-net
+
+  # ============================
+  # aps2api (vproxy) — Gemini API 反向代理
+  # 通过节点池/订阅将 Gemini 请求路由到上游
+  # 默认端口: 2156
+  # 管理面板: http://localhost:2156/admin/
+  # ============================
   vproxy:
     build: .
     container_name: vproxy
     ports:
       - "2156:2156"
     volumes:
-      # 将宿主机当前目录下的 config 文件夹挂载到容器内，用于持久化密码、密钥和模型配置
       - ./config:/app/config
       - ./logs:/app/logs
       - ./assets:/app/assets
     environment:
-      # 可选：如果需要配置全局代理，可以直接在这里传入环境变量
       - PROXY_URL=
     restart: unless-stopped
+    networks:
+      - api-net
+
+networks:
+  api-net:
+    driver: bridge

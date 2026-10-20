@@ -40,6 +40,10 @@ config/migrated/
 # Logs
 logs/
 
+# new-api
+new-api/data/
+new-api/logs/
+
 # Frontend dependencies
 node_modules/
 web/node_modules/
