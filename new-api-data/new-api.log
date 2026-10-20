@@ -1,0 +1,23 @@
+[SYS] 2026/10/20 - 23:08:30 | initializing token encoders 
+[SYS] 2026/10/20 - 23:08:30 | token encoders initialized 
+[SYS] 2026/10/20 - 23:08:30 | SQL_DSN not set, using SQLite as database 
+[SYS] 2026/10/20 - 23:08:30 | database migration started 
+[SYS] 2026/10/20 - 23:08:30 | system is not initialized and no root user exists 
+[SYS] 2026/10/20 - 23:08:30 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2026/10/20 - 23:08:30 | i18n initialized with languages: zh-CN, zh-TW, en 
+[SYS] 2026/10/20 - 23:08:30 | Loaded 0 custom OAuth providers 
+[SYS] 2026/10/20 - 23:08:30 | New API v0.0.0 started 
+[INFO] 2026/10/20 - 23:08:30 | SYSTEM | codex credential auto-refresh task started: tick=10m0s threshold=24h0m0s 
+2026/10/20 23:08:30 WARNING: TRUSTED_PROXIES is unset or blank; trusting loopback, RFC 1918, and IPv6 ULA proxy addresses for compatibility. Set TRUSTED_PROXIES=none to trust no proxies, or configure explicit proxy IPs/CIDRs to replace these defaults.
+[SYS] 2026/10/20 - 23:08:30 | 正在更新数据看板数据... 
+[SYS] 2026/10/20 - 23:08:30 | 保存数据看板数据成功，共保存0条数据 
+[INFO] 2026/10/20 - 23:08:30 | SYSTEM | subscription quota reset task started: tick=1m0s 
+[INFO] 2026/10/20 - 23:08:30 | SYSTEM | system task runner started: runner=all-in-one-73-ldvdj-N9HDHE1N idle_interval=15s 
+
+  [33mWarning: Refresh cookie is not secure and refresh/logout Origin validation is disabled. Please set SESSION_COOKIE_SECURE=true in production.[0m
+
+
+  [32mNew API v0.0.0[0m  ready in 784 ms
+
+  ➜  [1mNetwork:[0m http://10.54.165.149:3000/
+
